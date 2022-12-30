@@ -2,6 +2,7 @@
 ================================
 
 *** The Class Attendance Form made easier for teachers and college class reps to fill in the details of each class held at a particular time.***
+![image](https://user-images.githubusercontent.com/71665600/210036427-32f3928f-eb67-48ac-82ac-927649d4619a.png)
 
 ## Getting Started
 
