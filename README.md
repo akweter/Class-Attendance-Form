@@ -7,8 +7,8 @@
 
 ### Installing the web app.
 
-[Fork the code here:](github.com/)
-[View the App:](netlify.com/)
+#### [Fork the code here:](https://github.com/john-BAPTIS/Class-Attendance-Form.git/)</br>
+#### [View the App:](netlify.com/)
 
 ***IMPORTANT NOTE ***.
 
