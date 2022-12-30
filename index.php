@@ -2,62 +2,8 @@
    //Create database connection using config file
    include_once("./Database/config.php");
 
-   //Fetch all users from the database
+//    //Fetch all users from the database
    $Data = mysqli_query($Dbase, 'SELECT * FROM row ORDER BY id DESC');
-   
-
-    require_once __DIR__ . '/lib/perpage.php';
-
-    $database = new $Dbase();
-    $name = "";
-    $code = "";
-
-    $queryCondition = "";
-    if(! empty($_POST['search'])){
-        foreach($_POST['search'] as $k => $v){
-            if(! empty($v)){
-                $queryCases = array("name", "code");
-                if(in_array($k, $queryCases)){
-                    if(! empty(@$queryCondition)){
-                        $queryCondition .= "AND";
-                    }
-                    else{ $queryCondition .= "WHERE"; }
-                }
-                switch($k){
-                    case "name";
-                    $name = $v;
-                    $queryCondition .= "name LIKE '" . $v . "%'";
-                    break;
-
-                    case "code";
-                    $code = $v;
-                    $queryCondition .= "code LIKE '" . $v . "%'";
-                    break;
-                }
-            }
-        }
-    }
-
-    $orderby = " ORDER BY id desc";
-    $sql = "SELECT * FROM `row` WHERE id=?"
-    $href = '';
-
-    $perPage = 10;
-    $page = 1;
-    if (isset($_POST['page'])) {
-        $page = $_POST['page'];
-    }
-    $start = ($page - 1) * $perPage;
-    if ($start < 0)
-        $start = 0;
-
-    $query = $sql . $orderby . " limit " . $start . "," . $perPage;
-    $result = mysqli_fetch_array($Data);
-
-    if (! empty($result)) {
-        $result["perpage"] = showperpage($sql, $perPage, $href);
-    }
-
 ?>
 
 <html lang="en">
@@ -106,11 +52,11 @@
                     echo "<td>".$row_data['lecturer']."</td>";
                     echo "<td>".$row_data['course']."</td>";
                     echo "<td><a href='./edit.php?id=$row_data[id]'>Edit</a> | <a href='./erase.php?id=$row_data[id]'>Delete</a></td>";
-                    if(isset($row_data['perpage'])){
-                        echo "tr";
-                        echo "<td colspan='9' align=right>".$row_data['perpage']."</td>";
-                        "</tr>";
-                    }                    
+                    // if(isset($row_data['perpage'])){
+                    //     echo "tr";
+                    //     echo "<td colspan='9' align=right>".$row_data['perpage']."</td>";
+                    //     "</tr>";
+                    // }                    
                     "</tbody>";
                 }
             ?>

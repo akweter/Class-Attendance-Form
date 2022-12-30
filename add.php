@@ -16,17 +16,6 @@
         // include database connection file
         include_once("./Database/config.php");
 
-        // //Validating values before it get submmitted
-        // if (! is_numeric($mobile)) {
-        //     echo('<script type="text/javascript">alert("Mobile number must be numeric")</script>');
-
-        // } elseif (! is_numeric($semester)) {
-        //     echo('<script type="text/javascript">alert("semester value must be numeric")</script>');
-
-        // } elseif (! is_numeric($index)) {
-        //     echo('<script type="text/javascript">alert("Index  number must be numeric")</script> ');
-        // }
-
         //Fetch the data in the database and display it in tabular form.
         $Data = mysqli_query($Dbase, "INSERT INTO row(`index`, `name`, `program`, `semester`, `mobile`, `classDate`, `lecturer`, `course`) VALUES('$index', '$name', '$program', '$semester', '$mobile', '$classDate', '$course', '$lecturer')");
 
